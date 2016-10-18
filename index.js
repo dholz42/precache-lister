@@ -1,7 +1,8 @@
 var fs = require("fs");
 var recursive = require("recursive-readdir");
+module.exports = precacheList;
 
-module.exports = function(pathToCache, outputPath, outputName, ignoredFileArray){
+function precacheList(pathToCache, outputPath, outputName, ignoredFileArray){
     var cachePath = pathToCache || ".";
     if (outputPath && outputPath.slice(-1) != '/') outputPath += '/';
     var outPath = outputPath || "";
