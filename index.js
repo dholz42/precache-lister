@@ -1,7 +1,6 @@
-var fs = require("fs");
-var path = require("path");
+var recursive = require("recursive-readdir");
 
-module.exports = function(cachePath){
+module.exports = function(pathToCache, outputPath, outputName){
     // var currentPath = process.cwd();
     // console.log("The current path is: " + currentPath);
     //
@@ -11,19 +10,16 @@ module.exports = function(cachePath){
     //
     // console.log("Listing files in this directory:");
 
-    var p = cachePath;
+    var p = pathToCache;
 
-    fs.readdir(p, function(err, files){
+    recursive(p, function(err, files){
         if (err){
             throw err;
         }
 
-        files.map(function(file){
-            return path.join(p, file);
-        }).filter(function(file){
-            return fs.statSync(file).isFile();
-        }).forEach(function(file){
+        files.forEach(function(file){
             console.log("%s", file);
         })
+
     })
 };
