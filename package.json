@@ -1,0 +1,19 @@
+{
+  "name": "precache-lister",
+  "version": "1.0.0",
+  "description": "Precache lister for Chrome service workers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dholz42/precache-lister.git"
+  },
+  "author": "Daniel Holz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dholz42/precache-lister/issues"
+  },
+  "homepage": "https://github.com/dholz42/precache-lister#readme"
+}
