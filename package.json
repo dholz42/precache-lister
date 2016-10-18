@@ -1,12 +1,12 @@
 {
   "name": "precache-lister",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Precache lister for Chrome service workers",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin":{
+  "bin": {
     "precache-lister": "./bin.js"
   },
   "repository": {
