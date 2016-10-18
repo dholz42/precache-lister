@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dholz42/precache-lister#readme",
   "dependencies": {
+    "fs": "0.0.1-security",
     "recursive-readdir": "^2.1.0"
   }
 }
