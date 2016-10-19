@@ -9,7 +9,7 @@ function precacheList(cachePath, outPath, outName, ignored){
     if (outPath && outPath != "" && outPath.slice(-1) != '/') outPath += '/';
     var outVar = outName.split(".")[0];
 
-    recursive(cachePath,/* ignored,*/ function(err, files){
+    recursive(cachePath,/* ignored,*/ function(err, files){ //Ignored file functionality currently does not work
         if (err){
             throw err;
         }
