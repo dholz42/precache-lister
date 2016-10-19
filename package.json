@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {},
   "bin": {
-    "precache-lister": "./index.js"
+    "precache-lister": "./bin.js"
   },
   "repository": {
     "type": "git",
