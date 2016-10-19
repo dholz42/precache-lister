@@ -4,10 +4,9 @@
   "description": "Precache lister for Chrome service workers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "precache-lister": "./bin.js"
+    "precache-lister": "./index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +19,7 @@
   },
   "homepage": "https://github.com/dholz42/precache-lister#readme",
   "dependencies": {
+    "commander": "^2.9.0",
     "fs": "0.0.1-security",
     "recursive-readdir": "^2.1.0"
   }

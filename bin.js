@@ -1,21 +1,21 @@
 #!/usr/bin/env node
 
+var program = require("commander");
 var precacheList = require('./');
 
-var help = false;
-var dashdash = false;
-var args = process.argv.slice(2).filter(function(arg) {
-  if (dashdash)
-    return !!arg;
-  else if (arg === '--')
-    dashdash = true;
-  else
-    return !!arg;
-});
+var cachePath = ".";
+var outPath = "";
+var outName = "precacheList.js";
+var ignored = [];
+program
+    .arguments('[pathToCache], [outputPath], [outputName] [ignoredFileArray]')
+    .action(function(pathToCache, outputPath, outputName, ignoredFileArray){
+      cachePath = pathToCache || ".";
+      outPath = outputPath || "";
+      outName = outputName || "precacheList.js";
+      ignored = ignoredFileArray || [];
+    })
+    .parse(process.argv);
 
-go();
 
-function go() {
-  precacheList.apply(this, args);
-}
-
+precacheList(cachePath, outPath, outName, ignored);
