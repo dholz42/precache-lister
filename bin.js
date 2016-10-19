@@ -2,7 +2,20 @@
 
 var precacheList = require('./');
 
-var args = process.argv.slice(2);
+var help = false;
+var dashdash = false;
+var args = process.argv.slice(2).filter(function(arg) {
+  if (dashdash)
+    return !!arg;
+  else if (arg === '--')
+    dashdash = true;
+  else
+    return !!arg;
+});
 
-precacheList.apply(this, args);
+go();
+
+function go() {
+  precacheList.apply(this, args);
+}
 
