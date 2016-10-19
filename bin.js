@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var precacheList = require('./');
 
 var args = process.argv.slice(2);
