@@ -1,6 +1,6 @@
 {
   "name": "precache-lister",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Precache lister for Chrome service workers",
   "main": "index.js",
   "scripts": {},
