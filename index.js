@@ -18,7 +18,7 @@ function precacheList(cachePath, outPath, outName, ignored){
             if(err){
                 throw err;
             }
-            console.log("File has been saved successfully!");
+            console.log("Precache list has been saved successfully!");
         })
     });
 
