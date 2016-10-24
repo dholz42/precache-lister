@@ -4,14 +4,20 @@ var recursive = require("recursive-readdir");
 
 module.exports = precacheList;
 
-function precacheList(cachePath, outPath, outName, ignored){
-
+function precacheList(cachePath, outPath, outName, outPrefix, ignored){
+    var forwardSlash = "";
+    if (outPrefix !== ""){
+        forwardSlash = "/";
+    }
     if (outPath && outPath != "" && outPath.slice(-1) != '/') outPath += '/';
     var outVar = outName.split(".")[0];
 
     recursive(cachePath,/* ignored,*/ function(err, files){ //Ignored file functionality currently does not work
         if (err){
             throw err;
+        }
+        for (var i = 0; i < files.length; i++){
+           files[i] = forwardSlash + outPrefix + files[i];
         }
         var outFile = createOutFile(files);
         fs.writeFile(outPath + outName, outFile, function(err){
